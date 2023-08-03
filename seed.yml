@@ -1,3 +1,0 @@
-before_build:
-  - echo 'export CI=false' >> $BASH_ENV
-  - npm install -w frontend
