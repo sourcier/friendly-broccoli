@@ -1,23 +1,24 @@
 {
-  "name": "friendly-broccoli",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "sst dev",
-    "build": "sst build",
-    "deploy": "sst deploy",
-    "remove": "sst remove",
-    "console": "sst console",
-    "typecheck": "tsc --noEmit"
-  },
   "devDependencies": {
-    "sst": "^2.22.11",
+    "@tsconfig/node16": "^16.1.0",
     "aws-cdk-lib": "2.84.0",
     "constructs": "10.1.156",
-    "typescript": "^5.1.6",
-    "@tsconfig/node16": "^16.1.0"
+    "sst": "^2.22.11",
+    "typescript": "^5.1.6"
   },
+  "license": "UNLICENSED",
+  "name": "friendly-broccoli",
+  "private": true,
+  "scripts": {
+    "build": "sst build",
+    "console": "sst console",
+    "deploy": "sst deploy",
+    "dev": "sst dev",
+    "remove": "sst remove",
+    "typecheck": "tsc --noEmit"
+  },
+  "type": "module",
+  "version": "0.0.0",
   "workspaces": [
     "packages/frontend",
     "packages/stacks"
