@@ -1,12 +1,3 @@
-$primary: #cb0c9f;
-$secondary: #8392ab;
-$success: #82d616;
-$info: #17c1e8;
-$warning: #f53939;
-$danger: #ea0606;
-$light: #e9ecef;
-$dark: #252f40;
-
 $font-family-sans-serif: var(--font-open-sans);
 
-@import 'bootstrap/scss/bootstrap.scss';
+@import "../assets/scss/soft-design-system-pro.scss";
