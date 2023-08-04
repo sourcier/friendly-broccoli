@@ -19,6 +19,7 @@
     "@tsconfig/node16": "^16.1.0"
   },
   "workspaces": [
-    "packages/*"
+    "packages/frontend",
+    "packages/stacks"
   ]
 }
