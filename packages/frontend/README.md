@@ -1,5 +1,13 @@
 ## Getting Started
 
+## Resources and credits
+
+This system is fully coded and built on top of Open Source, more details here:
+
+- [Soft UI Design System](https://www.creative-tim.com/learning-lab/bootstrap/overview/soft-ui-design-system)
+- [Font Awesome](https://fontawesome.com/docs)
+
+## Quickstart
 First, run the development server:
 
 ```bash
