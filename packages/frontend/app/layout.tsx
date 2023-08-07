@@ -1,10 +1,13 @@
-import { Open_Sans } from "next/font/google";
-import "./global.scss";
+import { CssVarsProvider } from "@mui/joy/styles";
+import CssBaseline from "@mui/joy/CssBaseline";
+import "@fontsource/inter";
+// import { Open_Sans } from "next/font/google";
+// import "./global.scss";
 
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  variable: "--font-open-sans",
-});
+// const openSans = Open_Sans({
+//   subsets: ["latin"],
+//   variable: "--font-open-sans",
+// });
 
 export default function RootLayout({
   children,
@@ -12,8 +15,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={openSans.variable}>
-      <body>{children}</body>
+    <html lang="en">
+      <body>
+        <CssVarsProvider>
+          <CssBaseline />
+          {children}
+        </CssVarsProvider>
+      </body>
     </html>
   );
 }
