@@ -3,8 +3,8 @@
 First, run the development server:
 
 ```bash
-npm run dev
-cd packages/frontend && npm run dev
+npm install
+npm run dev -w packages/frontend
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
