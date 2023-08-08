@@ -1,13 +1,5 @@
-import { CssVarsProvider } from "@mui/joy/styles";
-import CssBaseline from "@mui/joy/CssBaseline";
-import "@fontsource/inter";
-// import { Open_Sans } from "next/font/google";
-// import "./global.scss";
-
-// const openSans = Open_Sans({
-//   subsets: ["latin"],
-//   variable: "--font-open-sans",
-// });
+import "@fontsource-variable/inter";
+import "./globals.css";
 
 export default function RootLayout({
   children,
@@ -16,12 +8,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <CssVarsProvider>
-          <CssBaseline />
-          {children}
-        </CssVarsProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
