@@ -4,7 +4,7 @@ First, run the development server:
 
 ```bash
 npm install
-npm run dev -w packages/frontend
+npm run dev -w frontend
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
