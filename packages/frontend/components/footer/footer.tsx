@@ -1,10 +1,10 @@
 const navigation = {
   year: 2023,
-  company: "Sourcier Ltd.",
+  company: 'Sourcier Ltd.',
   main: [
-    { name: "About", href: "#" },
-    { name: "Academy", href: "#" },
-    { name: "Blog", href: "#" },
+    { name: 'About', href: '#' },
+    { name: 'Academy', href: '#' },
+    { name: 'Blog', href: '#' },
   ],
 };
 
@@ -28,7 +28,13 @@ export default function Footer() {
           ))}
         </nav>
         <p className="mt-10 text-center text-xs leading-5 text-gray-500">
-          &copy; {navigation.year} {navigation.company} All rights reserved.
+          &copy;
+          {' '}
+          {navigation.year}
+          {' '}
+          {navigation.company}
+          {' '}
+          All rights reserved.
         </p>
       </div>
     </footer>

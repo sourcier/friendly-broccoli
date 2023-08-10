@@ -18,7 +18,7 @@
   "keywords": [],
   "license": "UNLICENSED",
   "main": "index.js",
-  "name": "frontend",
+  "name": "@sourcier/frontend",
   "private": true,
   "scripts": {
     "build": "next build",
