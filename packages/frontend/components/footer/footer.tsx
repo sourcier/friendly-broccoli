@@ -28,7 +28,13 @@ export default function Footer() {
           ))}
         </nav>
         <p className="mt-10 text-center text-xs leading-5 text-gray-500">
-          &copy; {navigation.year} {navigation.company} All rights reserved.
+          &copy;
+          {' '}
+          {navigation.year}
+          {' '}
+          {navigation.company}
+          {' '}
+          All rights reserved.
         </p>
       </div>
     </footer>
