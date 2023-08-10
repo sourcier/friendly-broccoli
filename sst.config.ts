@@ -1,8 +1,8 @@
 import { SSTConfig } from 'sst';
-import { FrontendStack } from '@sourcier/stacks/FrontendStack';
+import FrontendStack from '@sourcier/stacks/FrontendStack';
 
 export default {
-  config(_input) {
+  config() {
     return {
       name: 'friendly-broccoli',
       region: 'eu-west-2',

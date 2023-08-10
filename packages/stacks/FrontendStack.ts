@@ -1,6 +1,6 @@
 import { NextjsSite, StackContext } from 'sst/constructs';
 
-export function FrontendStack({ stack }: StackContext) {
+export default function FrontendStack({ stack }: StackContext) {
   const site = new NextjsSite(stack, 'NextJsSite', {
     path: 'packages/frontend',
   });
