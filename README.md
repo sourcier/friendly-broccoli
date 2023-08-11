@@ -1,5 +1,4 @@
-[![Seed Status](https://api.seed.run/sourcier/friendly-broccoli/stages/dev/build_badge)](https://console.seed.run/sourcier/friendly-broccoli)
-[![Seed Status](https://api.seed.run/sourcier/friendly-broccoli/stages/prod/build_badge)](https://console.seed.run/sourcier/friendly-broccoli)
+[![Seed Status](https://api.seed.run/sourcier/friendly-broccoli/stages/dev/build_badge)](https://console.seed.run/sourcier/friendly-broccoli) [![Seed Status](https://api.seed.run/sourcier/friendly-broccoli/stages/prod/build_badge)](https://console.seed.run/sourcier/friendly-broccoli)
 
 ## Getting Started
 
