@@ -3,6 +3,7 @@
     "sst": "^2.22.11"
   },
   "devDependencies": {
+    "@next/eslint-plugin-next": "^13.4.13",
     "@tsconfig/node18": "^18.2.0",
     "@types/node": "^20.4.6",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
