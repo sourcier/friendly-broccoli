@@ -3,7 +3,7 @@ import './globals.css';
 
 import config from '../config';
 import { Footer } from '../components/server/footer';
-import { NavBar } from '../components/client/navbar';
+import { NavBar } from '../components/client/nav-bar';
 
 export default function RootLayout({
   children,
@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="pt-20">
+      <body>
         <NavBar navigation={config.navigation} />
         {children}
         <Footer copyright={config.copyright} navigation={config.navigation} />
