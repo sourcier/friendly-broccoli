@@ -1,10 +1,26 @@
 {
+  "dependencies": {
+    "sst": "^2.22.11"
+  },
   "devDependencies": {
-    "@tsconfig/node16": "^16.1.0",
+    "@tsconfig/node18": "^18.2.0",
     "@types/node": "^20.4.6",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
     "aws-cdk-lib": "2.84.0",
     "constructs": "10.1.156",
-    "sst": "^2.22.11",
+    "eslint": "^8.46.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.0.1",
     "typescript": "^5.1.6"
   },
   "license": "UNLICENSED",
@@ -15,6 +31,8 @@
     "console": "sst console",
     "deploy": "sst deploy",
     "dev": "sst dev",
+    "lint": "prettier --write . && eslint --fix .",
+    "prepare": "husky install",
     "remove": "sst remove",
     "typecheck": "tsc --noEmit"
   },

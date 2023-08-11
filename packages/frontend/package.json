@@ -6,19 +6,19 @@
     "@heroicons/react": "^2.0.18",
     "next": "^13.4.12",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.3.3"
   },
   "description": "",
   "devDependencies": {
     "@types/react": "^18.2.18",
     "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.27",
-    "tailwindcss": "^3.3.3"
+    "postcss": "^8.4.27"
   },
   "keywords": [],
   "license": "UNLICENSED",
   "main": "index.js",
-  "name": "frontend",
+  "name": "@sourcier/frontend",
   "private": true,
   "scripts": {
     "build": "next build",

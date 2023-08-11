@@ -1,0 +1,10 @@
+{
+  "plugins": ["prettier"],
+  "extends": ["airbnb", "airbnb-typescript", "plugin:react/jsx-runtime"],
+  "parserOptions": {
+    "project": "./tsconfig.eslint.json"
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": "off" // todo: work out how to make this rule work with npm workspaces
+  }
+}
