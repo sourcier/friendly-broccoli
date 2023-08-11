@@ -7,7 +7,7 @@ type FooterProps = {
   };
 };
 
-export default function Footer({ copyright, navigation }: FooterProps) {
+export function Footer({ copyright, navigation }: FooterProps) {
   return (
     <footer className="bg-white mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-5 lg:px-8">
@@ -33,3 +33,5 @@ export default function Footer({ copyright, navigation }: FooterProps) {
     </footer>
   );
 }
+
+export default Footer;

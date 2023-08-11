@@ -1,7 +1,7 @@
 import '@fontsource-variable/inter';
 import './globals.css';
 
-import Footer from '../components/server/footer/footer';
+import { Footer } from '../components/server/footer';
 import config from '../config';
 
 export default function RootLayout({
