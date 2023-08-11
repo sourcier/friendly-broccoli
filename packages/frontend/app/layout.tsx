@@ -1,6 +1,8 @@
 import '@fontsource-variable/inter';
 import './globals.css';
-import Footer from '../components/footer/footer';
+
+import Footer from '../components/server/footer/footer';
+import config from '../config';
 
 export default function RootLayout({
   children,
@@ -11,7 +13,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
-        <Footer />
+        <Footer copyright={config.copyright} navigation={config.navigation} />
       </body>
     </html>
   );

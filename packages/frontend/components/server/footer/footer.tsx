@@ -1,14 +1,13 @@
-const navigation = {
-  year: 2023,
-  company: 'Sourcier Ltd.',
-  main: [
-    { name: 'About', href: '#' },
-    { name: 'Academy', href: '#' },
-    { name: 'Blog', href: '#' },
-  ],
+import type { NavigationLink } from '../../../config';
+
+type FooterProps = {
+  copyright: string;
+  navigation: {
+    main: NavigationLink[];
+  };
 };
 
-export default function Footer() {
+export default function Footer({ copyright, navigation }: FooterProps) {
   return (
     <footer className="bg-white mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-5 lg:px-8">
@@ -28,8 +27,7 @@ export default function Footer() {
           ))}
         </nav>
         <p className="mt-10 text-center text-xs leading-5 text-gray-500">
-          {`&copy; ${navigation.year} ${navigation.company} All rights
-          reserved.`}
+          {copyright}
         </p>
       </div>
     </footer>
