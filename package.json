@@ -32,6 +32,7 @@
     "deploy": "sst deploy",
     "dev": "sst dev",
     "lint": "prettier --write . && eslint --fix .",
+    "lint:ci": "prettier . && eslint .",
     "prepare": "husky install",
     "remove": "sst remove",
     "typecheck": "tsc --noEmit"
