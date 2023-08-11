@@ -1,3 +1,1 @@
-export default function Page() {
-  return <h1>Hello, friendly-broccoli!</h1>;
-}
+export default function Page() {}

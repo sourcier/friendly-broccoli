@@ -17,7 +17,7 @@ const config: Config = {
   navigation: {
     main: [
       { name: 'About', href: '#' },
-      { name: 'Academy', href: '#' },
+      { name: 'Courses', href: '#' },
       { name: 'Blog', href: '#' },
     ],
   },

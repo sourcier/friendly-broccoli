@@ -1,8 +1,9 @@
 import '@fontsource-variable/inter';
 import './globals.css';
 
-import { Footer } from '../components/server/footer';
 import config from '../config';
+import { Footer } from '../components/server/footer';
+import { NavBar } from '../components/client/navbar';
 
 export default function RootLayout({
   children,
@@ -11,7 +12,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="pt-20">
+        <NavBar navigation={config.navigation} />
         {children}
         <Footer copyright={config.copyright} navigation={config.navigation} />
       </body>
