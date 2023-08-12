@@ -25,11 +25,13 @@ export function NavBar({ navigation }: NavBarProps) {
           >
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
-                alt="Your Company"
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-              />
+              <picture>
+                <img
+                  alt="Your Company"
+                  className="h-8 w-auto"
+                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                />
+              </picture>
             </Link>
             <button
               type="button"
@@ -64,11 +66,13 @@ export function NavBar({ navigation }: NavBarProps) {
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
+              <picture>
+                <img
+                  className="h-8 w-auto"
+                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                  alt=""
+                />
+              </picture>
             </Link>
             <button
               type="button"
