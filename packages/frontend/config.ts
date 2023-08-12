@@ -21,9 +21,10 @@ const config: Config = {
   copyright: '© 2021 Sourcier Ltd. All rights reserved',
   navigation: {
     main: [
-      { name: 'About', href: '#' },
-      { name: 'Courses', href: '#' },
-      { name: 'Blog', href: '#' },
+      { name: 'About Us', href: '/about-us' },
+      { name: 'Our Courses', href: '/our-courses' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'Contact Us', href: '/contact-us' },
     ],
   },
   homepage: {
