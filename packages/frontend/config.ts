@@ -1,3 +1,5 @@
+import type { HeroProps } from './components/server/hero';
+
 export type NavigationLink = {
   name: string;
   href: string;
@@ -8,6 +10,9 @@ type Config = {
   copyright: string;
   navigation: {
     main: NavigationLink[];
+  };
+  homepage: {
+    hero: HeroProps;
   };
 };
 
@@ -20,6 +25,17 @@ const config: Config = {
       { name: 'Courses', href: '#' },
       { name: 'Blog', href: '#' },
     ],
+  },
+  homepage: {
+    hero: {
+      title: 'Lorem ipsum sit amet ullamco',
+      subTitle:
+        'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.',
+      image: {
+        src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1742&q=80',
+        alt: '',
+      },
+    },
   },
 };
 
