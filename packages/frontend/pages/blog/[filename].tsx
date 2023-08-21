@@ -1,9 +1,6 @@
-// THIS FILE HAS BEEN GENERATED WITH THE TINA CLI.
-// This is a demo file once you have tina setup feel free to delete this file
-
 import { useTina } from 'tinacms/dist/react';
 import { TinaMarkdown, TinaMarkdownContent } from 'tinacms/dist/rich-text';
-import { client } from '../../../../tina/__generated__/client';
+import { client } from '../../tina/__generated__/client';
 
 function PageSection({
   heading,
@@ -204,7 +201,6 @@ export const getStaticProps = async ({ params }) => {
       variables,
       data,
       query,
-      // myOtherProp: 'some-other-data',
     },
   };
 };

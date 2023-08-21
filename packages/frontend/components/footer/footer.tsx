@@ -1,4 +1,4 @@
-import type { NavigationLink } from '../../../config';
+import type { NavigationLink } from '../../config';
 
 type FooterProps = {
   copyright: string;

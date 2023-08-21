@@ -1,4 +1,4 @@
-import type { HeroProps } from './components/server/hero';
+import type { HeroProps } from './components/hero';
 
 export type NavigationLink = {
   name: string;
