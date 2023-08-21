@@ -12,6 +12,7 @@
         "name": "post",
         "label": "Posts",
         "path": "content/posts",
+        "format": "md",
         "fields": [
           {
             "type": "string",
@@ -38,7 +39,79 @@
         "name": "homepage",
         "label": "Homepage",
         "path": "content/homepage",
+        "format": "md",
         "fields": [
+          {
+            "type": "object",
+            "list": true,
+            "name": "blocks",
+            "label": "Sections",
+            "templates": [
+              {
+                "name": "hero",
+                "label": "Hero",
+                "ui": {
+                  "defaultItem": {
+                    "headline": "Lorem ipsum sit amet ullamco",
+                    "text": "Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo."
+                  }
+                },
+                "fields": [
+                  {
+                    "type": "string",
+                    "label": "Headline",
+                    "name": "headline",
+                    "namespace": ["homepage", "blocks", "hero", "headline"],
+                    "searchable": true
+                  },
+                  {
+                    "type": "string",
+                    "label": "Text",
+                    "name": "text",
+                    "ui": { "component": "textarea" },
+                    "namespace": ["homepage", "blocks", "hero", "text"],
+                    "searchable": true
+                  },
+                  {
+                    "type": "object",
+                    "label": "Image",
+                    "name": "image",
+                    "fields": [
+                      {
+                        "label": "src",
+                        "name": "src",
+                        "type": "image",
+                        "namespace": [
+                          "homepage",
+                          "blocks",
+                          "hero",
+                          "image",
+                          "src"
+                        ]
+                      },
+                      {
+                        "label": "alt",
+                        "name": "alt",
+                        "type": "string",
+                        "namespace": [
+                          "homepage",
+                          "blocks",
+                          "hero",
+                          "image",
+                          "alt"
+                        ]
+                      }
+                    ],
+                    "namespace": ["homepage", "blocks", "hero", "image"],
+                    "searchable": true
+                  }
+                ],
+                "namespace": ["homepage", "blocks", "hero"]
+              }
+            ],
+            "namespace": ["homepage", "blocks"],
+            "searchable": true
+          },
           {
             "type": "string",
             "name": "title",
@@ -90,6 +163,11 @@
       "type": "PostConnection",
       "resolveType": "collectionDocumentList",
       "collection": "post"
+    },
+    "HomepageBlocks": {
+      "type": "HomepageBlocks",
+      "resolveType": "unionData",
+      "typeMap": { "hero": "HomepageBlocksHero" }
     },
     "Homepage": {
       "type": "Homepage",
@@ -1240,6 +1318,78 @@
       },
       {
         "kind": "ObjectTypeDefinition",
+        "interfaces": [],
+        "directives": [],
+        "name": { "kind": "Name", "value": "HomepageBlocksHeroImage" },
+        "fields": [
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "src" },
+            "arguments": [],
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "String" }
+            }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "alt" },
+            "arguments": [],
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "String" }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "ObjectTypeDefinition",
+        "interfaces": [],
+        "directives": [],
+        "name": { "kind": "Name", "value": "HomepageBlocksHero" },
+        "fields": [
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "headline" },
+            "arguments": [],
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "String" }
+            }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "text" },
+            "arguments": [],
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "String" }
+            }
+          },
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "image" },
+            "arguments": [],
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "HomepageBlocksHeroImage" }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "UnionTypeDefinition",
+        "name": { "kind": "Name", "value": "HomepageBlocks" },
+        "directives": [],
+        "types": [
+          {
+            "kind": "NamedType",
+            "name": { "kind": "Name", "value": "HomepageBlocksHero" }
+          }
+        ]
+      },
+      {
+        "kind": "ObjectTypeDefinition",
         "interfaces": [
           { "kind": "NamedType", "name": { "kind": "Name", "value": "Node" } },
           {
@@ -1250,6 +1400,18 @@
         "directives": [],
         "name": { "kind": "Name", "value": "Homepage" },
         "fields": [
+          {
+            "kind": "FieldDefinition",
+            "name": { "kind": "Name", "value": "blocks" },
+            "arguments": [],
+            "type": {
+              "kind": "ListType",
+              "type": {
+                "kind": "NamedType",
+                "name": { "kind": "Name", "value": "HomepageBlocks" }
+              }
+            }
+          },
           {
             "kind": "FieldDefinition",
             "name": { "kind": "Name", "value": "title" },
@@ -1311,8 +1473,126 @@
       },
       {
         "kind": "InputObjectTypeDefinition",
+        "name": { "kind": "Name", "value": "ImageFilter" },
+        "fields": [
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "startsWith" },
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "String" }
+            }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "eq" },
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "String" }
+            }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "exists" },
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "Boolean" }
+            }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "in" },
+            "type": {
+              "kind": "ListType",
+              "type": {
+                "kind": "NamedType",
+                "name": { "kind": "Name", "value": "String" }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "InputObjectTypeDefinition",
+        "name": { "kind": "Name", "value": "HomepageBlocksHeroImageFilter" },
+        "fields": [
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "src" },
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "ImageFilter" }
+            }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "alt" },
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "StringFilter" }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "InputObjectTypeDefinition",
+        "name": { "kind": "Name", "value": "HomepageBlocksHeroFilter" },
+        "fields": [
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "headline" },
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "StringFilter" }
+            }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "text" },
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "StringFilter" }
+            }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "image" },
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "HomepageBlocksHeroImageFilter"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "InputObjectTypeDefinition",
+        "name": { "kind": "Name", "value": "HomepageBlocksFilter" },
+        "fields": [
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "hero" },
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "HomepageBlocksHeroFilter" }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "InputObjectTypeDefinition",
         "name": { "kind": "Name", "value": "HomepageFilter" },
         "fields": [
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "blocks" },
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "HomepageBlocksFilter" }
+            }
+          },
           {
             "kind": "InputValueDefinition",
             "name": { "kind": "Name", "value": "title" },
@@ -1797,8 +2077,88 @@
       },
       {
         "kind": "InputObjectTypeDefinition",
+        "name": { "kind": "Name", "value": "HomepageBlocksHeroImageMutation" },
+        "fields": [
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "src" },
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "String" }
+            }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "alt" },
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "String" }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "InputObjectTypeDefinition",
+        "name": { "kind": "Name", "value": "HomepageBlocksHeroMutation" },
+        "fields": [
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "headline" },
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "String" }
+            }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "text" },
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "String" }
+            }
+          },
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "image" },
+            "type": {
+              "kind": "NamedType",
+              "name": {
+                "kind": "Name",
+                "value": "HomepageBlocksHeroImageMutation"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "InputObjectTypeDefinition",
+        "name": { "kind": "Name", "value": "HomepageBlocksMutation" },
+        "fields": [
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "hero" },
+            "type": {
+              "kind": "NamedType",
+              "name": { "kind": "Name", "value": "HomepageBlocksHeroMutation" }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "InputObjectTypeDefinition",
         "name": { "kind": "Name", "value": "HomepageMutation" },
         "fields": [
+          {
+            "kind": "InputValueDefinition",
+            "name": { "kind": "Name", "value": "blocks" },
+            "type": {
+              "kind": "ListType",
+              "type": {
+                "kind": "NamedType",
+                "name": { "kind": "Name", "value": "HomepageBlocksMutation" }
+              }
+            }
+          },
           {
             "kind": "InputValueDefinition",
             "name": { "kind": "Name", "value": "title" },
