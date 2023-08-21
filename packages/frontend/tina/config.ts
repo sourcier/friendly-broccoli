@@ -39,9 +39,31 @@ const config = defineConfig({
             isBody: true,
           },
         ],
+      },
+      {
+        name: 'homepage',
+        label: 'Homepage',
+        path: 'content/homepage',
+        fields: [
+          {
+            type: 'string',
+            name: 'title',
+            label: 'Title',
+            isTitle: true,
+            required: true,
+          },
+          {
+            type: 'rich-text',
+            name: 'body',
+            label: 'Body',
+            isBody: true,
+          },
+        ],
         ui: {
-          // This is an DEMO router. You can remove this to fit your site
-          router: ({ document }) => `/blog/${document._sys.filename}`,
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
         },
       },
     ],
