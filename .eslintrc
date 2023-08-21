@@ -10,11 +10,13 @@
   },
   "plugins": ["prettier"],
   "rules": {
-    "import/no-extraneous-dependencies": "off" // todo: work out how to make this rule work with npm workspaces
+    "import/no-extraneous-dependencies": "off", // todo: work out how to make this rule work with npm workspaces
+    "no-underscore-dangle": "off"
   },
   "settings": {
     "next": {
       "rootDir": "packages/frontend"
     }
-  }
+  },
+  "ignorePatterns": ["packages/frontend/tina/__generated__"]
 }
