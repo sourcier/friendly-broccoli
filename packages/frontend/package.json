@@ -25,7 +25,7 @@
   "scripts": {
     "build": "tinacms build && next build --no-lint",
     "dev": "tinacms dev -c \"next dev\"",
-    "lint": "next lint",
+    "lint": "tinacms build next lint",
     "start": "tinacms build && next start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
