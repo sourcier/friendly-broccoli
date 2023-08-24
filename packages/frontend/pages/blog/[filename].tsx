@@ -175,8 +175,7 @@ function BlogPage({
         >
           {' '}
           Check out this guide
-        </a>
-        {' '}
+        </a>{' '}
         to see how add TinaCMS to an existing Next.js site.
       </div>
     </div>

@@ -23,21 +23,21 @@ export default function Page({
     <div>
       {data.homepage.blocks
         ? data.homepage.blocks.map((block) => {
-          switch (block.__typename) {
-            case 'HomepageBlocksHero':
-              return (
-                <Fragment key={block.id + block.__typename}>
-                  <Hero
-                    title={block.headline}
-                    subTitle={block.text}
-                    image={block.image}
-                  />
-                </Fragment>
-              );
-            default:
-              return null;
-          }
-        })
+            switch (block.__typename) {
+              case 'HomepageBlocksHero':
+                return (
+                  <Fragment key={block.id + block.__typename}>
+                    <Hero
+                      title={block.headline}
+                      subTitle={block.text}
+                      image={block.image}
+                    />
+                  </Fragment>
+                );
+              default:
+                return null;
+            }
+          })
         : null}
     </div>
   );

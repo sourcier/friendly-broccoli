@@ -2,6 +2,7 @@
   "extends": [
     "airbnb",
     "airbnb-typescript",
+    "prettier",
     "plugin:@next/next/recommended",
     "plugin:react/jsx-runtime"
   ],
@@ -11,7 +12,8 @@
   "plugins": ["prettier"],
   "rules": {
     "import/no-extraneous-dependencies": "off", // todo: work out how to make this rule work with npm workspaces
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "prettier/prettier": "error"
   },
   "settings": {
     "next": {
