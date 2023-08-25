@@ -20,5 +20,8 @@
       "rootDir": "packages/frontend"
     }
   },
-  "ignorePatterns": ["packages/frontend/tina/__generated__"]
+  "ignorePatterns": [
+    "packages/frontend/tina/__generated__",
+    "packages/frontend/public/admin"
+  ]
 }

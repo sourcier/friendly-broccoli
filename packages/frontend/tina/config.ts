@@ -49,8 +49,8 @@ const heroBlock: Template = {
 
 const config = defineConfig({
   branch,
-  clientId: null, // Get this from tina.io
-  token: null, // Get this from tina.io
+  clientId: process.env.TINACMS_CLIENT_ID,
+  token: process.env.TINACMS_TOKEN,
 
   build: {
     outputFolder: 'admin',

@@ -27,5 +27,8 @@ jobs:
       - name: Install
         run: npm ci
 
+      - name: Generate tinacms files
+        run: npm run tinacms:build -w packages/frontend
+
       - name: Lint
         run: npm run lint:ci
