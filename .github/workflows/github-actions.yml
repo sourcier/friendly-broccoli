@@ -28,6 +28,9 @@ jobs:
         run: npm ci
 
       - name: Generate tinacms files
+        env:
+          TINACMS_CLIENT_ID: ${{ secrets.TINACMS_CLIENT_ID }}
+          TINACMS_TOKEN: ${{ secrets.TINACMS_TOKEN }}
         run: npm run tinacms:build -w packages/frontend
 
       - name: Lint
