@@ -28,7 +28,7 @@
     "lint": "tinacms build next lint",
     "start": "tinacms build && next start",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tinacms:build": "tinacms build --skip-cloud-checks"
+    "tinacms:build": "tinacms build"
   },
   "version": "0.1.0"
 }
