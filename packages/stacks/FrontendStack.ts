@@ -11,8 +11,8 @@ export default function FrontendStack({ stack }: StackContext) {
       cdk: {
         certificate: Certificate.fromCertificateArn(
           stack,
-          '91918ff7-9013-45ad-8a7b-30f3dd928efe',
-          'arn:aws:acm:eu-west-2:561381207426:certificate/91918ff7-9013-45ad-8a7b-30f3dd928efe'
+          'd8f786c1-c7a4-4191-9e79-a5654cc45365',
+          'arn:aws:acm:us-east-1:561381207426:certificate/d8f786c1-c7a4-4191-9e79-a5654cc45365'
         ),
       },
     },
