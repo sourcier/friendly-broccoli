@@ -2,6 +2,7 @@
   "extends": [
     "airbnb",
     "airbnb-typescript",
+    "prettier",
     "plugin:@next/next/recommended",
     "plugin:react/jsx-runtime"
   ],
@@ -10,11 +11,17 @@
   },
   "plugins": ["prettier"],
   "rules": {
-    "import/no-extraneous-dependencies": "off" // todo: work out how to make this rule work with npm workspaces
+    "import/no-extraneous-dependencies": "off", // todo: work out how to make this rule work with npm workspaces
+    "no-underscore-dangle": "off",
+    "prettier/prettier": "error"
   },
   "settings": {
     "next": {
       "rootDir": "packages/frontend"
     }
-  }
+  },
+  "ignorePatterns": [
+    "packages/frontend/tina/__generated__",
+    "packages/frontend/public/admin"
+  ]
 }

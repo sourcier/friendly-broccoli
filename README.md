@@ -2,7 +2,9 @@
 
 ## Getting Started
 
-First, run the development server:
+Create a `.env` file and add `TINACMS_CLIENT_ID` and `TINACMS_TOKEN` env variables, these can be found in 1Password or the tinacms dashboard.
+
+Run the development server:
 
 ```bash
 npm install
