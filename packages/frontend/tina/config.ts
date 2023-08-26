@@ -18,11 +18,13 @@ const heroBlock: Template = {
       type: 'string',
       label: 'Headline',
       name: 'headline',
+      required: true,
     },
     {
       type: 'string',
       label: 'Text',
       name: 'text',
+      required: true,
       ui: {
         component: 'textarea',
       },
@@ -31,16 +33,19 @@ const heroBlock: Template = {
       type: 'object',
       label: 'Image',
       name: 'image',
+      required: true,
       fields: [
         {
           label: 'src',
           name: 'src',
           type: 'image',
+          required: true,
         },
         {
           label: 'alt',
           name: 'alt',
           type: 'string',
+          required: true,
         },
       ],
     },

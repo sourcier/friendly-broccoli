@@ -182,10 +182,14 @@ function BlogPage({
   );
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({
+  params: { filename },
+}: {
+  params: { filename: string };
+}) => {
   let data = {};
   let query = {};
-  let variables = { relativePath: `${params.filename}.md` };
+  let variables = { relativePath: `${filename}.md` };
   try {
     const res = await client.queries.post(variables);
     query = res.query;
@@ -208,8 +212,8 @@ export const getStaticPaths = async () => {
   const postsListData = await client.queries.postConnection();
 
   return {
-    paths: postsListData.data.postConnection.edges.map((post) => ({
-      params: { filename: post.node._sys.filename },
+    paths: postsListData?.data?.postConnection?.edges?.map((post) => ({
+      params: { filename: post?.node?._sys.filename },
     })),
     fallback: false,
   };
