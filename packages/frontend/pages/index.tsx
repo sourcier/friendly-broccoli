@@ -3,6 +3,7 @@ import { useTina } from 'tinacms/dist/react';
 
 import { Hero } from '../components/hero';
 import { client } from '../tina/__generated__/client';
+import { HomepageBlocks } from '../tina/__generated__/types';
 
 export default function Page({
   data: pData,
@@ -22,11 +23,11 @@ export default function Page({
   return (
     <div>
       {data.homepage.blocks
-        ? data.homepage.blocks.map((block) => {
+        ? data.homepage.blocks.map((block: HomepageBlocks) => {
             switch (block.__typename) {
               case 'HomepageBlocksHero':
                 return (
-                  <Fragment key={block.id + block.__typename}>
+                  <Fragment key={block.__typename}>
                     <Hero
                       title={block.headline}
                       subTitle={block.text}

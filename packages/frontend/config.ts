@@ -1,5 +1,3 @@
-import type { HeroProps } from './components/hero';
-
 export type NavigationLink = {
   name: string;
   href: string;
@@ -10,9 +8,6 @@ type Config = {
   copyright: string;
   navigation: {
     main: NavigationLink[];
-  };
-  homepage: {
-    hero: HeroProps;
   };
 };
 

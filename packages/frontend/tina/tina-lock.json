@@ -61,6 +61,7 @@
                     "type": "string",
                     "label": "Headline",
                     "name": "headline",
+                    "required": true,
                     "namespace": ["homepage", "blocks", "hero", "headline"],
                     "searchable": true
                   },
@@ -68,6 +69,7 @@
                     "type": "string",
                     "label": "Text",
                     "name": "text",
+                    "required": true,
                     "ui": { "component": "textarea" },
                     "namespace": ["homepage", "blocks", "hero", "text"],
                     "searchable": true
@@ -76,11 +78,13 @@
                     "type": "object",
                     "label": "Image",
                     "name": "image",
+                    "required": true,
                     "fields": [
                       {
                         "label": "src",
                         "name": "src",
                         "type": "image",
+                        "required": true,
                         "namespace": [
                           "homepage",
                           "blocks",
@@ -93,6 +97,7 @@
                         "label": "alt",
                         "name": "alt",
                         "type": "string",
+                        "required": true,
                         "namespace": [
                           "homepage",
                           "blocks",
@@ -1327,8 +1332,11 @@
             "name": { "kind": "Name", "value": "src" },
             "arguments": [],
             "type": {
-              "kind": "NamedType",
-              "name": { "kind": "Name", "value": "String" }
+              "kind": "NonNullType",
+              "type": {
+                "kind": "NamedType",
+                "name": { "kind": "Name", "value": "String" }
+              }
             }
           },
           {
@@ -1336,8 +1344,11 @@
             "name": { "kind": "Name", "value": "alt" },
             "arguments": [],
             "type": {
-              "kind": "NamedType",
-              "name": { "kind": "Name", "value": "String" }
+              "kind": "NonNullType",
+              "type": {
+                "kind": "NamedType",
+                "name": { "kind": "Name", "value": "String" }
+              }
             }
           }
         ]
@@ -1353,8 +1364,11 @@
             "name": { "kind": "Name", "value": "headline" },
             "arguments": [],
             "type": {
-              "kind": "NamedType",
-              "name": { "kind": "Name", "value": "String" }
+              "kind": "NonNullType",
+              "type": {
+                "kind": "NamedType",
+                "name": { "kind": "Name", "value": "String" }
+              }
             }
           },
           {
@@ -1362,8 +1376,11 @@
             "name": { "kind": "Name", "value": "text" },
             "arguments": [],
             "type": {
-              "kind": "NamedType",
-              "name": { "kind": "Name", "value": "String" }
+              "kind": "NonNullType",
+              "type": {
+                "kind": "NamedType",
+                "name": { "kind": "Name", "value": "String" }
+              }
             }
           },
           {
@@ -1371,8 +1388,11 @@
             "name": { "kind": "Name", "value": "image" },
             "arguments": [],
             "type": {
-              "kind": "NamedType",
-              "name": { "kind": "Name", "value": "HomepageBlocksHeroImage" }
+              "kind": "NonNullType",
+              "type": {
+                "kind": "NamedType",
+                "name": { "kind": "Name", "value": "HomepageBlocksHeroImage" }
+              }
             }
           }
         ]

@@ -36,7 +36,7 @@
     "lint:ci": "eslint .",
     "prepare": "husky install",
     "remove": "sst remove",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit --project tsconfig.eslint.json"
   },
   "type": "module",
   "version": "0.1.0",
