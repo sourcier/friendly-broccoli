@@ -2,7 +2,6 @@
   "extends": "./tsconfig.json",
   "include": [
     "./packages/**/**/*.js",
-    "./packages/**/**/*.cjs",
     "./packages/**/**/*.ts",
     "./packages/**/**/*.tsx",
     "sst.config.ts"

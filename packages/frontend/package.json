@@ -30,6 +30,5 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "tinacms:build": "tinacms build"
   },
-  "type": "module",
   "version": "0.1.0"
 }
