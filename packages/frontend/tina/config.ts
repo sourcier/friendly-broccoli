@@ -54,6 +54,7 @@ const heroBlock: Template = {
 
 const config = defineConfig({
   branch,
+  localContentPath: process.env.TINACMS_REMOTE_ROOT_PATH,
   clientId: process.env.TINACMS_CLIENT_ID,
   token: process.env.TINACMS_TOKEN,
 
@@ -72,7 +73,7 @@ const config = defineConfig({
       {
         name: 'post',
         label: 'Posts',
-        path: 'content/posts',
+        path: 'posts',
         format: 'md',
         fields: [
           {
@@ -93,7 +94,7 @@ const config = defineConfig({
       {
         name: 'homepage',
         label: 'Homepage',
-        path: 'content/homepage',
+        path: 'homepage',
         format: 'md',
         fields: [
           {
