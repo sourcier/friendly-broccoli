@@ -11,7 +11,7 @@
       {
         "name": "post",
         "label": "Posts",
-        "path": "content/posts",
+        "path": "posts",
         "format": "md",
         "fields": [
           {
@@ -38,7 +38,7 @@
       {
         "name": "homepage",
         "label": "Homepage",
-        "path": "content/homepage",
+        "path": "homepage",
         "format": "md",
         "fields": [
           {

@@ -23,12 +23,12 @@
   "name": "@sourcier/frontend",
   "private": true,
   "scripts": {
-    "build": "tinacms build && next build --no-lint",
+    "build": "tinacms build --skip-cloud-checks && next build --no-lint",
     "dev": "tinacms dev -c \"next dev\"",
-    "lint": "tinacms build next lint",
-    "start": "tinacms build && next start",
+    "lint": "tinacms build --skip-cloud-checks next lint",
+    "start": "tinacms build --skip-cloud-checks && next start",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tinacms:build": "tinacms build"
+    "tinacms:build": "tinacms build --skip-cloud-checks"
   },
   "version": "0.1.0"
 }

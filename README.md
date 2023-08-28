@@ -2,17 +2,40 @@
 
 ## Getting Started
 
-Create a `.env` file and add `TINACMS_CLIENT_ID` and `TINACMS_TOKEN` env variables, these can be found in 1Password or the tinacms dashboard.
+## Quickstart
+
+```bash
+git clone git@github.com:sourcier/uk.sourcier.content.git
+git clone git@github.com:sourcier/friendly-broccoli.git
+cd friendly-broccoli
+touch .env
+```
+
+Add:
+
+- `TINACMS_CLIENT_ID`
+- `TINACMS_TOKEN`
+- `TINACMS_REMOTE_ROOT_PATH` - relative path (from packages/frontend) to the markdown content store on your machine
+
+env variables, `TINACMS_CLIENT_ID` and `TINACMS_TOKEN` can be found in 1Password or the tinacms dashboard.
 
 Run the development server:
 
 ```bash
-npm install
-npm run dev -w frontend
+npm run dev -w packages/frontend
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Environments
 
-Staging: [staging.sourcier.uk](https://staging.sourcier.uk), [d29y9cbdddw7gk.cloudfront.net](https://d29y9cbdddw7gk.cloudfront.net)
+Staging: [staging.sourcier.uk](https://staging.sourcier.uk), [d2aqywhkdsx1tj.cloudfront.net](https://d2aqywhkdsx1tj.cloudfront.net)
+
+## Resources and credits
+
+This system is fully coded and built on top of Open Source, more details here:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [tailwindcss](https://tailwindcss.com/docs/installation)
+- [headless ui](https://headlessui.com)
+- [tinacms](https://tina.io)
