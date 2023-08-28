@@ -92,6 +92,15 @@ const config = defineConfig({
         ],
         ui: {
           router: async ({ document }) => `/blog/${document._sys.filename}`,
+          filename: {
+            readonly: true,
+            slugify({ title = '' }) {
+              return title
+                .toLowerCase()
+                .replace(/\s+/g, '-')
+                .replace(/[^a-zA-Z0-9-]/g, '');
+            },
+          },
         },
       },
       {
