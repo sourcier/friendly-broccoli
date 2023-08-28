@@ -33,6 +33,7 @@
             "parser": { "type": "markdown" }
           }
         ],
+        "ui": {},
         "namespace": ["post"]
       },
       {

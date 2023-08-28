@@ -90,6 +90,9 @@ const config = defineConfig({
             isBody: true,
           },
         ],
+        ui: {
+          router: async ({ document }) => `/blog/${document._sys.filename}`,
+        },
       },
       {
         name: 'homepage',
@@ -123,6 +126,7 @@ const config = defineConfig({
             create: false,
             delete: false,
           },
+          router: async () => `/`,
         },
       },
     ],
