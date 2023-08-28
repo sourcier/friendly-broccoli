@@ -33,3 +33,12 @@ npm run dev -w packages/frontend
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Content schema changes
+
+If you make a change to the content schema in `packges/frontend/tina/config.js` these changes will need to be manually syned to the content repo. You can do this by copying over:
+
+- packages/frontend/tina/config.ts
+- packages/frontend/tina/tina-lock.json
+
+Then creating a commit, this commit will need to be pushed before merging your PR.
