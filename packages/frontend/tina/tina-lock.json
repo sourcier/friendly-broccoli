@@ -33,7 +33,7 @@
             "parser": { "type": "markdown" }
           }
         ],
-        "ui": {},
+        "ui": { "filename": { "readonly": true } },
         "namespace": ["post"]
       },
       {
