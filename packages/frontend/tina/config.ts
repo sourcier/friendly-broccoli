@@ -63,9 +63,9 @@ const config = defineConfig({
     publicFolder: 'public',
   },
   media: {
-    tina: {
-      mediaRoot: '',
-      publicFolder: 'media',
+    loadCustomStore: async () => {
+      const pack = await import('next-tinacms-cloudinary');
+      return pack.TinaCloudCloudinaryMediaStore;
     },
   },
   schema: {
