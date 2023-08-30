@@ -19,6 +19,13 @@ Add:
 
 env variables, `TINACMS_CLIENT_ID` and `TINACMS_TOKEN` can be found in 1Password or the tinacms dashboard.
 
+To get images to load correctly from the content repo you do the following:
+
+```back
+cd friendly-broccoli
+ln -s $TINACMS_REMOTE_ROOT_PATH/public/media/ packages/frontend/public/media
+```
+
 Run the development server:
 
 ```bash

@@ -64,8 +64,8 @@ const config = defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: '',
-      publicFolder: 'media',
+      mediaRoot: 'media',
+      publicFolder: 'public',
     },
   },
   schema: {
