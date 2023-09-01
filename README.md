@@ -21,9 +21,9 @@ env variables, `TINACMS_CLIENT_ID` and `TINACMS_TOKEN` can be found in 1Password
 
 To get images to load correctly from the content repo you do the following:
 
-```back
-cd friendly-broccoli
-ln -s $TINACMS_REMOTE_ROOT_PATH/public/media/ packages/frontend/public/media
+```bash
+cd friendly-broccoli/packages/frontend/public
+ln -s $TINACMS_REMOTE_ROOT_PATH/public/media/ media
 ```
 
 Run the development server:

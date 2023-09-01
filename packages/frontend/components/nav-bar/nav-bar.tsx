@@ -41,13 +41,13 @@ export function NavBar({ navigation }: NavBarProps) {
             </button>
             <div className="hidden lg:ml-12 lg:flex lg:gap-x-14">
               {navigation.main.map((item) => (
-                <a
-                  key={item.name}
+                <Link
+                  key={item.id}
                   href={item.href}
                   className="text-sm font-semibold leading-6 text-gray-900"
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
           </nav>
@@ -86,7 +86,7 @@ export function NavBar({ navigation }: NavBarProps) {
               <div className="space-y-2 py-6">
                 {navigation.main.map((item) => (
                   <Link
-                    key={item.name}
+                    key={item.id}
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                   >

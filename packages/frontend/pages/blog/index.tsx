@@ -1,9 +1,9 @@
 import { useTina } from 'tinacms/dist/react';
 
-import { Blocks } from '../components/blocks';
-import { fetchTinaData } from '../lib/tinacms';
+import { Blocks } from '../../components/blocks';
+import { fetchTinaData } from '../../lib/tinacms';
 
-export default function HomePage({
+export default function BlogPage({
   data: pData,
   query,
   variables,
@@ -14,7 +14,7 @@ export default function HomePage({
 }) {
   const {
     data: {
-      pages: { topBlocks, body },
+      blog: { topBlocks, body },
     },
   } = useTina({
     query,
@@ -30,4 +30,4 @@ export default function HomePage({
 }
 
 export const getStaticProps = () =>
-  fetchTinaData({ collection: 'pages', filename: 'index' });
+  fetchTinaData({ collection: 'blog', filename: 'index' });

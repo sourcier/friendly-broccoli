@@ -1,5 +1,9 @@
+import { ParsedUrlQuery } from 'querystring';
 import { useTina } from 'tinacms/dist/react';
 import { TinaMarkdown, TinaMarkdownContent } from 'tinacms/dist/rich-text';
+import type { GetStaticProps } from 'next';
+
+import { fetchTinaData } from '../../lib/tinacms';
 import { client } from '../../tina/__generated__/client';
 
 function PageSection({
@@ -140,7 +144,7 @@ function ContentSection({
   );
 }
 
-function BlogPage({
+function BlogPostPage({
   query,
   variables,
   data: gspData,
@@ -163,9 +167,9 @@ function BlogPage({
         }}
       >
         <h1 className="text-3xl m-8 text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-          {data.post.title}
+          {data.blog.title}
         </h1>
-        <ContentSection content={data.post.body} />
+        <ContentSection content={data.blog.body} />
       </div>
       <div className="bg-green-100 text-center">
         Lost and looking for a place to start?
@@ -182,41 +186,23 @@ function BlogPage({
   );
 }
 
-export const getStaticProps = async ({
-  params: { filename },
-}: {
-  params: { filename: string };
-}) => {
-  let data = {};
-  let query = {};
-  let variables = { relativePath: `${filename}.md` };
-  try {
-    const res = await client.queries.post(variables);
-    query = res.query;
-    data = res.data;
-    variables = res.variables;
-  } catch {
-    // swallow errors related to document creation
-  }
-
-  return {
-    props: {
-      variables,
-      data,
-      query,
-    },
-  };
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { filename } = context.params as ParsedUrlQuery & { filename: string };
+  return fetchTinaData({ collection: 'blog', filename });
 };
 
 export const getStaticPaths = async () => {
-  const postsListData = await client.queries.postConnection();
+  const blogResponse = await client.queries.blogConnection();
+  const blogs = blogResponse.data.blogConnection.edges?.map((blog) => ({
+    params: {
+      filename: blog?.node?._sys.filename,
+    },
+  }));
 
   return {
-    paths: postsListData?.data?.postConnection?.edges?.map((post) => ({
-      params: { filename: post?.node?._sys.filename },
-    })),
+    paths: blogs,
     fallback: false,
   };
 };
 
-export default BlogPage;
+export default BlogPostPage;

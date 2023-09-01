@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import type { NavigationLink } from '../../config';
 
 type FooterProps = {
@@ -17,12 +19,13 @@ export function Footer({ copyright, navigation }: FooterProps) {
         >
           {navigation.main.map((item) => (
             <div key={item.name} className="pb-6">
-              <a
+              <Link
+                key={item.id}
                 href={item.href}
                 className="text-sm leading-6 text-gray-600 hover:text-gray-900"
               >
                 {item.name}
-              </a>
+              </Link>
             </div>
           ))}
         </nav>
