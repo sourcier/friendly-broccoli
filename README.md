@@ -23,7 +23,7 @@ To get images to load correctly from the content repo you do the following:
 
 ```back
 cd friendly-broccoli/packages/frontend/public
-ln -s $TINACMS_REMOTE_ROOT_PATH/public/media/ packages/frontend/public/media
+ln -s $TINACMS_REMOTE_ROOT_PATH/public/media/ media
 ```
 
 Run the development server:
