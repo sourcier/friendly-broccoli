@@ -1,9 +1,9 @@
 import { fetchTinaData } from '../lib/tinacms';
-import HomePage from '../components/pages/home';
+import { Page } from '../components/pages';
 
-export default async function Page() {
+export default async function HomePage() {
   const {
     props: { data, query, variables },
   } = await fetchTinaData({ collection: 'pages', filename: 'index' });
-  return <HomePage data={data} query={query} variables={variables} />;
+  return <Page data={data} query={query} variables={variables} />;
 }

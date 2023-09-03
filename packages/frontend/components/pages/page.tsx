@@ -4,7 +4,7 @@ import { useTina } from 'tinacms/dist/react';
 
 import { Blocks } from '../blocks';
 
-export default function HomePage({
+export function Page({
   data: pData,
   query,
   variables,
@@ -29,3 +29,5 @@ export default function HomePage({
     </div>
   );
 }
+
+export default Page;
