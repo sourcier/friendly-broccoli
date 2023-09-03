@@ -1,7 +1,8 @@
+'use client';
+
 import { useTina } from 'tinacms/dist/react';
 
-import { Blocks } from '../components/blocks';
-import { fetchTinaData } from '../lib/tinacms';
+import { Blocks } from '../blocks';
 
 export default function HomePage({
   data: pData,
@@ -28,6 +29,3 @@ export default function HomePage({
     </div>
   );
 }
-
-export const getStaticProps = () =>
-  fetchTinaData({ collection: 'pages', filename: 'index' });
