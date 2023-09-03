@@ -1,6 +1,6 @@
-import { fetchTinaData } from '../../lib/tinacms';
-import { Page } from '../../components/pages';
-import { client } from '../../tina/__generated__/client';
+import { fetchTinaData } from '../../../lib/tinacms';
+import { BlogPost } from '../../../components/pages';
+import { client } from '../../../tina/__generated__/client';
 
 type Params = {
   filename: string;
@@ -10,11 +10,11 @@ type MarketingPageProps = {
   params: Params;
 };
 
-const collection = 'pages';
+const collection = 'blog';
 
 export const dynamicParams = false;
 
-export default async function MarketingPage({
+export default async function BlogPostPage({
   params: { filename },
 }: MarketingPageProps) {
   const {
@@ -23,20 +23,13 @@ export default async function MarketingPage({
     collection,
     filename,
   });
-  return (
-    <Page
-      data={data}
-      query={query}
-      variables={variables}
-      collection={collection}
-    />
-  );
+  return <BlogPost data={data} query={query} variables={variables} />;
 }
 
 export async function generateStaticParams(): Promise<Params[]> {
-  const pagesResponse = await client.queries.pagesConnection();
+  const blogsResponse = await client.queries.blogConnection();
   return (
-    pagesResponse.data.pagesConnection.edges
+    blogsResponse.data.blogConnection.edges
       ?.filter((page) => page!.node!._sys.filename !== 'index')
       .map<{ filename: string }>((page) => ({
         filename: page!.node!._sys.filename,

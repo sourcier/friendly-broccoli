@@ -133,7 +133,11 @@ const config = defineConfig({
         format: 'mdx',
         fields: pageFields,
         ui: {
-          router: async ({ document }) => `/blog/${document._sys.filename}`,
+          router: async ({
+            document: {
+              _sys: { filename },
+            },
+          }) => (filename === 'index' ? '/blog' : `/blog/${filename}`),
           filename: {
             readonly: true,
             slugify({ title = '' }) {

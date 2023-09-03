@@ -1,21 +1,19 @@
 'use client';
 
 import { useTina } from 'tinacms/dist/react';
-
 import { Blocks } from '../blocks';
 
-export function Page({
-  data: pData,
-  query,
-  variables,
-}: {
+type PageProps = {
   query: any;
   variables: any;
   data: any;
-}) {
+  collection: string;
+};
+
+export function Page({ data: pData, query, variables, collection }: PageProps) {
   const {
     data: {
-      pages: { topBlocks, body },
+      [collection]: { topBlocks, body },
     },
   } = useTina({
     query,

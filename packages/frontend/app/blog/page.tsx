@@ -1,13 +1,12 @@
-import { fetchTinaData } from '../lib/tinacms';
-import { Page } from '../components/pages';
+import { fetchTinaData } from '../../lib/tinacms';
+import { Page } from '../../components/pages';
 
-const collection = 'pages';
+const collection = 'blog';
 
-export default async function HomePage() {
+export default async function BlogPage() {
   const {
     props: { data, query, variables },
   } = await fetchTinaData({ collection, filename: 'index' });
-
   return (
     <Page
       data={data}
