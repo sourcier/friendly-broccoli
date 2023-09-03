@@ -2,15 +2,16 @@
 
 import { useTina } from 'tinacms/dist/react';
 import { Blocks } from '../blocks';
+import type { Collection } from '../../lib/tinacms';
 
 type PageProps = {
   query: any;
   variables: any;
   data: any;
-  collection: string;
+  collection: Collection;
 };
 
-export function Page({ data: pData, query, variables, collection }: PageProps) {
+export function Page({ data, query, variables, collection }: PageProps) {
   const {
     data: {
       [collection]: { topBlocks, body },
@@ -18,7 +19,7 @@ export function Page({ data: pData, query, variables, collection }: PageProps) {
   } = useTina({
     query,
     variables,
-    data: pData,
+    data,
   });
 
   return (

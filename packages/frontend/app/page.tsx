@@ -4,9 +4,10 @@ import { Page } from '../components/pages';
 const collection = 'pages';
 
 export default async function HomePage() {
-  const {
-    props: { data, query, variables },
-  } = await fetchTinaData({ collection, filename: 'index' });
+  const { data, query, variables } = await fetchTinaData({
+    collection,
+    filename: 'index',
+  });
 
   return (
     <Page

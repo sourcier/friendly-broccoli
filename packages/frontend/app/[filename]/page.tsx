@@ -17,12 +17,11 @@ export const dynamicParams = false;
 export default async function MarketingPage({
   params: { filename },
 }: MarketingPageProps) {
-  const {
-    props: { data, query, variables },
-  } = await fetchTinaData({
+  const { data, query, variables } = await fetchTinaData({
     collection,
     filename,
   });
+
   return (
     <Page
       data={data}

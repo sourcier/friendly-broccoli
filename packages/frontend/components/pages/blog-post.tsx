@@ -2,6 +2,7 @@
 
 import { useTina } from 'tinacms/dist/react';
 import { TinaMarkdown, TinaMarkdownContent } from 'tinacms/dist/rich-text';
+import type { Collection } from '../../lib/tinacms';
 
 function PageSection({
   heading,
@@ -141,19 +142,27 @@ function ContentSection({
   );
 }
 
-export function BlogPost({
-  query,
-  variables,
-  data: gspData,
-}: {
+type BlogPostProps = {
   query: any;
   variables: any;
   data: any;
-}) {
-  const { data } = useTina({
+  collection: Collection;
+};
+
+export function BlogPost({
+  query,
+  variables,
+  data,
+  collection,
+}: BlogPostProps) {
+  const {
+    data: {
+      [collection]: { title, body },
+    },
+  } = useTina({
     query,
     variables,
-    data: gspData,
+    data,
   });
 
   return (
@@ -164,9 +173,9 @@ export function BlogPost({
         }}
       >
         <h1 className="text-3xl m-8 text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-          {data.blog.title}
+          {title}
         </h1>
-        <ContentSection content={data.blog.body} />
+        <ContentSection content={body} />
       </div>
       <div className="bg-green-100 text-center">
         Lost and looking for a place to start?

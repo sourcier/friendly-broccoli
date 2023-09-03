@@ -1,6 +1,6 @@
 import { client } from '../tina/__generated__/client';
 
-type Collection = 'pages' | 'blog';
+export type Collection = 'pages' | 'blog';
 
 export async function fetchTinaData({
   collection,
@@ -22,11 +22,9 @@ export async function fetchTinaData({
   }
 
   return {
-    props: {
-      variables,
-      data,
-      query,
-    },
+    variables,
+    data,
+    query,
   };
 }
 

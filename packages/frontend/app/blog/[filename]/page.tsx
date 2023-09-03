@@ -17,13 +17,18 @@ export const dynamicParams = false;
 export default async function BlogPostPage({
   params: { filename },
 }: MarketingPageProps) {
-  const {
-    props: { data, query, variables },
-  } = await fetchTinaData({
+  const { data, query, variables } = await fetchTinaData({
     collection,
     filename,
   });
-  return <BlogPost data={data} query={query} variables={variables} />;
+  return (
+    <BlogPost
+      data={data}
+      query={query}
+      variables={variables}
+      collection={collection}
+    />
+  );
 }
 
 export async function generateStaticParams(): Promise<Params[]> {
