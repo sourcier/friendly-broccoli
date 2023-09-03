@@ -1,10 +1,7 @@
-import { ParsedUrlQuery } from 'querystring';
+'use client';
+
 import { useTina } from 'tinacms/dist/react';
 import { TinaMarkdown, TinaMarkdownContent } from 'tinacms/dist/rich-text';
-import type { GetStaticProps } from 'next';
-
-import { fetchTinaData } from '../../lib/tinacms';
-import { client } from '../../tina/__generated__/client';
 
 function PageSection({
   heading,
@@ -144,7 +141,7 @@ function ContentSection({
   );
 }
 
-function BlogPostPage({
+export function BlogPost({
   query,
   variables,
   data: gspData,
@@ -186,23 +183,4 @@ function BlogPostPage({
   );
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  const { filename } = context.params as ParsedUrlQuery & { filename: string };
-  return fetchTinaData({ collection: 'blog', filename });
-};
-
-export const getStaticPaths = async () => {
-  const blogResponse = await client.queries.blogConnection();
-  const blogs = blogResponse.data.blogConnection.edges?.map((blog) => ({
-    params: {
-      filename: blog?.node?._sys.filename,
-    },
-  }));
-
-  return {
-    paths: blogs,
-    fallback: false,
-  };
-};
-
-export default BlogPostPage;
+export default BlogPost;
